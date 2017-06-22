@@ -1,29 +1,11 @@
 {
-<<<<<<< HEAD
-  "type": "package",
-  "package": {
     "name": "vatia/laravel-varnish",
-    "version": "0.1",
-    "source": {
-      "url": "git://github.com/Vatia13/laravel-varnish.git",
-      "type": "git",
-      "reference": "master"
-    },
-    "autoload": {
-      "psr-0" : {
-        "Spatie\\Varnish" : "src"
-      }
-    }
-  }
-}
-=======
-    "name": "spatie/laravel-varnish",
     "description": "Making Varnish and Laravel play nice together",
     "keywords": [
         "spatie",
         "laravel-varnish"
     ],
-    "homepage": "https://github.com/spatie/laravel-varnish",
+    "homepage": "https://github.com/vatia/laravel-varnish",
     "license": "MIT",
     "authors": [
         {
@@ -66,4 +48,3 @@
         }
     }
 }
->>>>>>> 56dcb551d7e9a3b10dd86c19b3d5e2c75160241f
