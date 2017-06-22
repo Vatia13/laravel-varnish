@@ -25,7 +25,7 @@ We assume that you've already installed Varnish on your server. If not read [thi
 You can install the package via composer:
 
 ``` bash
-composer require spatie/laravel-varnish
+composer require vatia/laravel-varnish
 ```
 
 First up: registering the service provider:
