@@ -1,0 +1,17 @@
+{
+  "type": "package",
+  "package": {
+    "name": "vatia/laravel-varnish",
+    "version": "0.1",
+    "source": {
+      "url": "git://github.com/Vatia13/laravel-varnish.git",
+      "type": "git",
+      "reference": "master"
+    },
+    "autoload": {
+      "psr-0" : {
+        "Spatie\\Varnish" : "src"
+      }
+    }
+  }
+}
