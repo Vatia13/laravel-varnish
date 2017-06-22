@@ -1,10 +1,6 @@
 <?php
 
 return [
-    /*
-     * The hostname this Laravel app is listening to.
-     */
-    'host' => 'example.com',
 
     /*
      * The location of the file containing the administrative password.

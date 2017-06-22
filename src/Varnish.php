@@ -28,25 +28,17 @@ class Varnish
     public function generateBanCommand($url)
     {
         $config = config('laravel-varnish');
-        $hosts = $config['host'];
-        if (! is_array($hosts)) {
-            $hosts = [$hosts];
-        }
-
-        if($url == false){
-            $hostsRegex = collect($hosts)
-                ->map(function (string $host) {
-                    return "(^{$host}$)";
-                })
-                ->implode('|');
-        }
-
 
         if($url){
+
             $url = str_replace(url('/'),'',$url);
+
+            # Command to clear cache for request url
             return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} ban 'req.url == {$url}'";
         }
-        return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} 'ban req.http.host ~ {$hostsRegex}'";
+
+        # Command to clear complete cache for all URLs and all sub-domains
+        return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} 'ban req.http.host ~ .*'";
     }
 
     /**
