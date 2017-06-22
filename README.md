@@ -151,6 +151,12 @@ You can also do this in your code to flush the cache:
 (new Spatie\Varnish\Varnish())->flush();
 ```
 
+You can clear cache for request url using code below:
+
+```php
+(new Spatie\Varnish\Varnish())->flush("http://example.com/page");
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
