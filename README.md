@@ -60,6 +60,12 @@ return [
     'administrative_secret' => '/etc/varnish/secret',
 
     /*
+     * The host where the administrative tasks may be sent to.
+     */
+    'administrative_host' => '127.0.0.1',
+
+
+    /*
      * The port where the administrative tasks may be sent to.
      */
     'administrative_port' => 6082,
