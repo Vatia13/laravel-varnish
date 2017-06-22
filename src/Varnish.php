@@ -51,7 +51,7 @@ class Varnish
 
         $config = config('laravel-varnish');
 
-        return "sudo varnishadm -S {$config['administrative_secret']} -T 127.0.0.1:{$config['administrative_port']} 'ban req.http.host ~ {$hostsRegex}'";
+        return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} 'ban req.http.host ~ {$hostsRegex}'";
     }
 
     protected function executeCommand(string $command): Process
