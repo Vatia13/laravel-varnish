@@ -8,15 +8,15 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class Varnish
 {
     /**
-     * @param string|array $host
-     *
-     * @return \Symfony\Component\Process\Process
+     * @param null $host
+     * @param string $url
+     * @return Process
      */
-    public function flush($host = null)
+    public function flush($host = null,$url = false)
     {
         $host = $this->getHosts($host);
 
-        $command = $this->generateBanCommand($host);
+        $command = $this->generateBanCommand($host,$url);
 
         return $this->executeCommand($command);
     }
@@ -37,20 +37,27 @@ class Varnish
         return $host;
     }
 
-    public function generateBanCommand(array $hosts): string
+    public function generateBanCommand(array $hosts,$url = false): string
     {
-        if (! is_array($hosts)) {
-            $hosts = [$hosts];
+        if($url == false){
+            if (! is_array($hosts)) {
+                $hosts = [$hosts];
+            }
+
+            $hostsRegex = collect($hosts)
+                ->map(function (string $host) {
+                    return "(^{$host}$)";
+                })
+                ->implode('|');
         }
 
-        $hostsRegex = collect($hosts)
-            ->map(function (string $host) {
-                return "(^{$host}$)";
-            })
-            ->implode('|');
 
         $config = config('laravel-varnish');
-
+        if($url == true){
+            foreach($hosts as $host){
+                return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} ban 'req.url == {$host}'";
+            }
+        }
         return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} 'ban req.http.host ~ {$hostsRegex}'";
     }
 
