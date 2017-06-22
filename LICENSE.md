@@ -1,10 +1,6 @@
 # The MIT License (MIT)
 
-<<<<<<< HEAD
-Copyright (c) 2016 Spatie bvba <info@spatie.be>
-=======
 Copyright (c) 2017 Spatie bvba <info@spatie.be>
->>>>>>> 56dcb551d7e9a3b10dd86c19b3d5e2c75160241f
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal

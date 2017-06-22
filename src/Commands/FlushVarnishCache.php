@@ -2,10 +2,7 @@
 
 namespace Spatie\Varnish\Commands;
 
-<<<<<<< HEAD
-=======
 use Spatie\Varnish\Varnish;
->>>>>>> 56dcb551d7e9a3b10dd86c19b3d5e2c75160241f
 use Illuminate\Console\Command;
 
 class FlushVarnishCache extends Command
@@ -31,11 +28,7 @@ class FlushVarnishCache extends Command
      */
     public function handle()
     {
-<<<<<<< HEAD
-        varnish()->flush();
-=======
         (new Varnish())->flush();
->>>>>>> 56dcb551d7e9a3b10dd86c19b3d5e2c75160241f
 
         $this->comment('The varnish cache has been flushed!');
     }

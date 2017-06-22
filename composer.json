@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "type": "package",
   "package": {
     "name": "vatia/laravel-varnish",
@@ -15,3 +16,54 @@
     }
   }
 }
+=======
+    "name": "spatie/laravel-varnish",
+    "description": "Making Varnish and Laravel play nice together",
+    "keywords": [
+        "spatie",
+        "laravel-varnish"
+    ],
+    "homepage": "https://github.com/spatie/laravel-varnish",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "illuminate/console": "^5.3",
+        "illuminate/http": "^5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.*",
+        "orchestra/testbench": "^3.3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Varnish\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Varnish\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Varnish\\VarnishServiceProvider"
+            ]
+        }
+    }
+}
+>>>>>>> 56dcb551d7e9a3b10dd86c19b3d5e2c75160241f
