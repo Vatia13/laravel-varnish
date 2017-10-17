@@ -36,7 +36,6 @@ class Varnish
             # Command to clear cache for request url
             return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} ban 'req.url ~ {$url}'";
         }
-
         # Command to clear complete cache for all URLs and all sub-domains
         return "sudo varnishadm -S {$config['administrative_secret']} -T {$config['administrative_host']}:{$config['administrative_port']} 'ban req.http.host ~ .*'";
     }
